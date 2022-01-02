@@ -27,7 +27,7 @@
 FROM adoptopenjdk/maven-openjdk11:latest as builder
 WORKDIR /usr/src/optaweb
 COPY . .
-RUN mvn clean install -DskipTests
+RUN mvn -q clean install -DskipTests
 
 FROM adoptopenjdk/openjdk11:ubi-minimal
 RUN mkdir /opt/app
